@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# Weather app 🌤
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Description
 
-Currently, two official plugins are available:
+A simple weather app which shows some information about different locations
+such as:
+Precipitation
+Humidity
+Wind
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Demo
 
-## Expanding the ESLint configuration
+[Live Demo](https://salartalaa.github.io/weather-app)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Screenshot](image.png)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚡ Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/salartalaa/weather-app.git
+cd weather-app
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📌 Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Create an API_KEY on [Visual Crossing](https://www.visualcrossing.com/weather-api)
+2. Create an `.env` file
+3. Add this variable inside it:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+VITE_API_KEY=<your-api-key>
+
 ```
+
+4. Run the app:
+   npm run dev
+
+## ✨ Features
+
+- ✅ Showing Weather Information Live
+- ✅ Forecasting
+- ✅ Searching Cities
+- ✅ Responsive Design
+- ✅ Animations using Framer Motion
+
+## 🛠️ Technologies
+
+- Vite ⚡
+- React ⚛️
+- Tailwind CSS 🎨
+- Framer Motion 🎬
+- Visual Crossing API 🌤️
