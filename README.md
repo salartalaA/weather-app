@@ -30,7 +30,7 @@ npm run dev
 3. Add this variable inside it:
 
 ```bash
-VITE_API_KEY=<your-api-key>
+VITE_VISUALCROSSING_API_KEY=<your-api-key>
 
 ```
 
