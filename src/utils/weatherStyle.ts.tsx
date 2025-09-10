@@ -77,12 +77,10 @@ export const getWeatherStyle = (conditions?: string): WeatherStyle => {
     },
   };
 
-  // جستجوی کلید مناسب
   for (const key in mapping) {
     if (cond.includes(key)) return mapping[key];
   }
 
-  // پیش‌فرض
   return {
     backgroundImage: coverDefault,
     gradientClass: "from-[#888888] to-[#444444] opacity-80",
