@@ -1,12 +1,14 @@
-import type { ForecastResponse } from "../types/weather";
+import type { ForecastResponse, ForecastDay } from "../types/weather";
 import { ForeCastChart } from "./ForeCastChart";
 
 interface Props {
   data: ForecastResponse;
+  onSelectDay: (day: ForecastDay) => void;
+  selectedDay?: ForecastDay | null;
 }
 
-export const DetailsCard = ({ data }: Props) => {
-  const today = data?.[0];
+export const DetailsCard = ({ data, onSelectDay, selectedDay }: Props) => {
+  const today = selectedDay ?? data?.[0];
 
   const precipitation = (() => {
     if (today?.precipprob != null) return `${Math.round(today.precipprob)}%`;
@@ -33,9 +35,13 @@ export const DetailsCard = ({ data }: Props) => {
           </div>
         ))}
 
-        <div className="flex-grow"></div>
+        <div className="flex-grow" />
 
-        <ForeCastChart data={data} />
+        <ForeCastChart
+          data={data}
+          onSelectDay={onSelectDay}
+          selectedDay={selectedDay}
+        />
       </div>
     </div>
   );
