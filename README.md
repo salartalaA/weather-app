@@ -12,7 +12,7 @@ Wind
 
 [Live Demo](https://salartalaa.github.io/weather-app)
 
-![Screenshot](image.png)
+![Screenshot](src/assets/screenshot-for-readme.png)
 
 ## ⚡ Installation
 
