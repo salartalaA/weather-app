@@ -26,12 +26,12 @@ export const DetailsCard = ({ data, onSelectDay, selectedDay }: Props) => {
   ];
 
   return (
-    <div className="flex flex-col bg-[#222831] w-[944px] h-[623px] relative p-12 rounded-3xl text-white">
+    <div className="flex flex-col bg-[#222831] w-[350px] sm:w-md md:w-2xl lg:w-[944px] lg:h-[623px] relative p-8 lg:p-12 rounded-3xl text-white">
       <div className="flex flex-col gap-y-4 items-end text-right h-full">
         {rows.map((item) => (
-          <div key={item.id} className="flex justify-between w-[42%]">
-            <div className="font-bold text-3xl">{item.title}</div>
-            <div className="font-medium text-3xl">{item.value}</div>
+          <div key={item.id} className="flex justify-between w-full lg:w-[42%]">
+            <div className="text-sm font-normal md:text-xl md:font-semibold lg:font-bold lg:text-3xl">{item.title}</div>
+            <div className="text-base md:text-xl md:font-medium lg:text-3xl">{item.value}</div>
           </div>
         ))}
 

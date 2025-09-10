@@ -33,10 +33,12 @@ export function LocationButton() {
       <DialogTrigger asChild>
         <Button
           variant="default"
-          className="w-[360px] h-12 bg-gradient-to-br from-[#88EBEF] to-[#535BE6]"
+          className="w-xs md:w-md lg:w-[360px] h-12 bg-gradient-to-br from-[#88EBEF] to-[#535BE6]"
         >
           <SlLocationPin className="size-8" />
-          Change Location
+          <span className="text-sm font-normal md:text-xl md:font-semibold">
+            {"Change Location"}
+          </span>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] bg-[#222831]">

@@ -29,8 +29,8 @@ export const ForeCastChart = ({ data, onSelectDay, selectedDay }: Props) => {
   });
 
   return (
-    <div className="w-[42%] flex flex-col items-center gap-y-[71px]">
-      <div className="flex justify-between gap-1 mt-8">
+    <div className="w-full lg:w-[42%] flex flex-col items-center gap-y-14 md:gap-y-[71px]">
+      <div className="flex justify-between gap-0.5 md:gap-4 lg:gap-1 mt-8">
         {forecastData.map((item, index) => {
           const Icon = item.icon;
           const isSelected =
@@ -42,7 +42,7 @@ export const ForeCastChart = ({ data, onSelectDay, selectedDay }: Props) => {
               key={index}
               type="button"
               onClick={() => onSelectDay(item.fullData)}
-              className={`flex flex-col items-center justify-center p-4 rounded-xl gap-y-4 cursor-pointer
+              className={`flex flex-col items-center justify-center p-4 rounded-xl gap-y-2 md:gap-y-4 cursor-pointer
                 ${
                   isSelected
                     ? "!bg-white text-black ring-2 ring-white"
@@ -54,9 +54,9 @@ export const ForeCastChart = ({ data, onSelectDay, selectedDay }: Props) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Icon className="size-14" />
-              <div className="text-xl font-normal">{item.day}</div>
-              <div className="text-xl font-bold">{item.temp}°C</div>
+              <Icon className="size-10 md:size-14" />
+              <div className="text-sm md:text-xl font-normal">{item.day}</div>
+              <div className="text-sm md:text-xl font-bold">{item.temp}°C</div>
             </motion.button>
           );
         })}

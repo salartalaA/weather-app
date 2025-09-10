@@ -32,7 +32,7 @@ const App = () => {
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => {
-        window.location.href = '/'
+        window.location.href = "/";
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -51,7 +51,7 @@ const App = () => {
   }
 
   return (
-    <div className="flex justify-between items-start relative w-full p-4 gap-4">
+    <div className="flex flex-col lg:flex-row justify-between items-start relative w-auto lg:w-full p-4 gap-4">
       {weather && selectedDay && (
         <MainWeatherCard data={weather} selectedDay={selectedDay} />
       )}

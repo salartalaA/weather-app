@@ -23,7 +23,7 @@ export const MainWeatherCard = ({ data, selectedDay }: Props) => {
   );
 
   return (
-    <div className="absolute bottom-0.5 w-[493px] h-full rounded-4xl shadow-lg z-10 text-white overflow-hidden">
+    <div className="relative lg:absolute bottom-0.5 w-[350px] sm:w-md md:w-2xl lg:w-[493px] h-full rounded-4xl shadow-lg z-10 text-white overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={backgroundImage}
@@ -48,7 +48,7 @@ export const MainWeatherCard = ({ data, selectedDay }: Props) => {
       >
         <div className="flex flex-col gap-y-4">
           <motion.div
-            className="text-4xl font-bold"
+            className="text-2xl lg:text-4xl font-bold"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -56,7 +56,7 @@ export const MainWeatherCard = ({ data, selectedDay }: Props) => {
             {weekday}
           </motion.div>
           <motion.div
-            className="text-xl font-medium"
+            className="text-sm lg:text-xl font-medium"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -70,23 +70,25 @@ export const MainWeatherCard = ({ data, selectedDay }: Props) => {
             transition={{ delay: 0.6 }}
           >
             <SlLocationPin className="size-7" />
-            <div className="text-xl font-semibold">{city}</div>
+            <div className="text-xs md:text-xl font-semibold">{city}</div>
           </motion.div>
         </div>
 
         <div className="flex-grow" />
 
         <motion.div
-          className="flex flex-col gap-y-3 mb-8"
+          className="flex flex-col items-center lg:items-start gap-y-3 mb-8"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
         >
-          <Icon className="size-24" />
-          <div className="text-5xl font-bold">
+          <Icon className="size-20 md:size-24" />
+          <div className="text-xl md:text-2xl lg:text-5xl font-bold">
             {`${Math.round(selectedDay.temp ?? selectedDay.tempmax ?? 0)} °C`}
           </div>
-          <div className="text-3xl font-bold">{selectedDay.conditions}</div>
+          <div className="text-base md:text-3xl font-bold">
+            {selectedDay.conditions}
+          </div>
         </motion.div>
       </motion.div>
     </div>
